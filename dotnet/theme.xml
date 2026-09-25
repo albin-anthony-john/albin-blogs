@@ -1,0 +1,1660 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false'
+      b:defaultwidgetversion='2'
+      b:layoutsVersion='3'
+      b:responsive='true'
+      b:templateVersion='1.3.0'
+      expr:dir='data:blog.languageDirection'
+      expr:lang='data:blog.locale'
+      xmlns='http://www.w3.org/1999/xhtml'
+      xmlns:b='http://www.google.com/2005/gml/b'
+      xmlns:data='http://www.google.com/2005/gml/data'
+      xmlns:expr='http://www.google.com/2005/gml/expr'>
+  <head>
+    <meta content='width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover' name='viewport'/>
+    <title><data:view.title.escaped/></title>
+    <b:include data='blog' name='all-head-content'/>
+    <meta content='Building scalable .NET systems and sharing real-world engineering insights.' name='description'/>
+    <meta content='CodewithAlbin, Albin Antony John, Full Stack .NET Engineer, ASP.NET Core, Microservices, System Design, Azure, AWS, DevOps, Blogger Theme' name='keywords'/>
+    <meta content='index,follow,max-image-preview:large' name='robots'/>
+    <meta content='#0b1020' name='theme-color'/>
+    <meta content='CodewithAlbin' property='og:site_name'/>
+    <meta content='website' property='og:type'/>
+    <meta content='Building scalable .NET systems and sharing real-world engineering insights.' property='og:description'/>
+    <meta content='summary_large_image' name='twitter:card'/>
+    <meta content='CodewithAlbin' name='twitter:title'/>
+    <meta content='Building scalable .NET systems and sharing real-world engineering insights.' name='twitter:description'/>
+    <link crossorigin='crossorigin' href='https://fonts.googleapis.com' rel='preconnect'/>
+    <link href='https://fonts.gstatic.com' rel='preconnect'/>
+    <link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&amp;family=JetBrains+Mono:wght@400;600;700&amp;display=swap' rel='stylesheet'/>
+    <b:skin><![CDATA[
+:root{
+  --bg:#0b1020;
+  --bg-elevated:#11182d;
+  --bg-soft:#16203a;
+  --bg-strong:#0f1530;
+  --surface:#10182b;
+  --surface-2:#18233f;
+  --surface-3:#223255;
+  --text:#f4f7fb;
+  --text-soft:#c5d0e6;
+  --text-muted:#90a0c0;
+  --line:rgba(148,163,184,.18);
+  --line-strong:rgba(148,163,184,.32);
+  --accent:#5eead4;
+  --accent-2:#7dd3fc;
+  --accent-3:#22c55e;
+  --danger:#f97316;
+  --shadow:0 24px 70px rgba(0,0,0,.35);
+  --shadow-soft:0 18px 40px rgba(6,10,24,.2);
+  --radius:24px;
+  --radius-sm:16px;
+  --radius-xs:12px;
+  --container:min(1180px, calc(100% - 32px));
+  --font-body:'Roboto', sans-serif;
+  --font-code:'JetBrains Mono', monospace;
+  --header-height:76px;
+}
+
+html.light-mode{
+  --bg:#f5f7fb;
+  --bg-elevated:#ffffff;
+  --bg-soft:#eef4ff;
+  --bg-strong:#e5edff;
+  --surface:#ffffff;
+  --surface-2:#f8fbff;
+  --surface-3:#edf3fe;
+  --text:#0f172a;
+  --text-soft:#334155;
+  --text-muted:#64748b;
+  --line:rgba(15,23,42,.1);
+  --line-strong:rgba(15,23,42,.18);
+  --shadow:0 24px 70px rgba(15,23,42,.08);
+  --shadow-soft:0 18px 40px rgba(15,23,42,.07);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  background:
+    radial-gradient(circle at top left, rgba(34,197,94,.10), transparent 26%),
+    radial-gradient(circle at top right, rgba(125,211,252,.12), transparent 24%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-elevated) 100%);
+  color:var(--text);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button,input,textarea{font:inherit}
+::selection{background:rgba(94,234,212,.25);color:var(--text)}
+
+.skip-link{
+  position:absolute;
+  left:-9999px;
+  top:0;
+}
+.skip-link:focus{
+  left:16px;
+  top:16px;
+  z-index:200;
+  padding:10px 14px;
+  border-radius:999px;
+  background:var(--accent);
+  color:#04212a;
+}
+
+.page-shell{
+  min-height:100vh;
+}
+
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:120;
+  backdrop-filter:blur(18px);
+  background:rgba(11,16,32,.72);
+  border-bottom:1px solid var(--line);
+}
+html.light-mode .site-header{
+  background:rgba(245,247,251,.82);
+}
+
+.nav-wrap{
+  width:var(--container);
+  min-height:var(--header-height);
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  min-width:0;
+}
+
+.brand-mark{
+  width:46px;
+  height:46px;
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  font-family:var(--font-code);
+  font-weight:700;
+  color:#04131b;
+  background:linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow:var(--shadow-soft);
+}
+
+.brand-copy{
+  min-width:0;
+}
+
+.brand-copy strong{
+  display:block;
+  font-size:1rem;
+  letter-spacing:.01em;
+}
+
+.brand-copy span{
+  display:block;
+  font-size:.88rem;
+  color:var(--text-muted);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.nav-actions{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.nav-link{
+  padding:10px 14px;
+  border-radius:999px;
+  color:var(--text-soft);
+  transition:background .25s ease,color .25s ease,transform .25s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus{
+  background:var(--surface-2);
+  color:var(--text);
+  transform:translateY(-1px);
+}
+
+.theme-toggle,
+.copy-button,
+.search-toggle{
+  border:1px solid var(--line);
+  background:var(--surface);
+  color:var(--text);
+  border-radius:999px;
+  padding:10px 14px;
+  cursor:pointer;
+  transition:transform .25s ease, border-color .25s ease, background .25s ease;
+}
+
+.theme-toggle:hover,
+.copy-button:hover,
+.search-toggle:hover{
+  transform:translateY(-1px);
+  border-color:var(--line-strong);
+}
+
+.search-panel{
+  width:var(--container);
+  margin:0 auto;
+  padding:0 0 18px;
+  display:none;
+}
+
+.search-panel.is-visible{
+  display:block;
+}
+
+.search-card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:18px;
+  box-shadow:var(--shadow-soft);
+}
+
+.search-card form{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.search-card input[type="text"]{
+  flex:1 1 220px;
+  min-height:52px;
+  background:var(--bg-soft);
+  color:var(--text);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:0 16px;
+}
+
+.search-card button{
+  min-height:52px;
+  padding:0 20px;
+  border:none;
+  border-radius:14px;
+  background:linear-gradient(135deg, var(--accent), var(--accent-2));
+  color:#04212a;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.hero{
+  width:var(--container);
+  margin:0 auto;
+  padding:56px 0 24px;
+  display:grid;
+  grid-template-columns:minmax(0,1.5fr) minmax(280px,.95fr);
+  gap:24px;
+  align-items:stretch;
+}
+
+.hero-panel,
+.hero-side,
+.card,
+.section-card,
+.sidebar-card,
+.post-card,
+.feature-card,
+.contact-card{
+  background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-soft);
+}
+
+html.light-mode .hero-panel,
+html.light-mode .hero-side,
+html.light-mode .card,
+html.light-mode .section-card,
+html.light-mode .sidebar-card,
+html.light-mode .post-card,
+html.light-mode .feature-card,
+html.light-mode .contact-card{
+  background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.82));
+}
+
+.hero-panel{
+  padding:36px;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-panel:before{
+  content:'';
+  position:absolute;
+  inset:auto -16% -35% auto;
+  width:340px;
+  height:340px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(94,234,212,.18), transparent 68%);
+  pointer-events:none;
+}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(94,234,212,.08);
+  color:var(--accent);
+  border:1px solid rgba(94,234,212,.16);
+  font-size:.84rem;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.hero h1,
+.section-heading h2,
+.page-hero h1,
+.post-title{
+  margin:18px 0 12px;
+  line-height:1.05;
+  letter-spacing:-.04em;
+}
+
+.hero h1{
+  font-size:clamp(2.5rem, 4.5vw, 4.8rem);
+  max-width:12ch;
+}
+
+.hero p{
+  max-width:62ch;
+  color:var(--text-soft);
+  font-size:1.06rem;
+  margin:0 0 24px;
+}
+
+.hero-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom:28px;
+}
+
+.button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-height:52px;
+  padding:0 20px;
+  border-radius:16px;
+  font-weight:700;
+  transition:transform .25s ease, border-color .25s ease, background .25s ease;
+}
+
+.button-primary{
+  color:#04212a;
+  background:linear-gradient(135deg, var(--accent), var(--accent-2));
+}
+
+.button-secondary{
+  background:var(--surface);
+  border:1px solid var(--line);
+  color:var(--text);
+}
+
+.button:hover{
+  transform:translateY(-1px);
+}
+
+.metric-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:14px;
+}
+
+.metric{
+  padding:18px;
+  border-radius:18px;
+  background:var(--bg-soft);
+  border:1px solid var(--line);
+}
+
+.metric strong{
+  display:block;
+  font-size:1.35rem;
+  line-height:1.1;
+}
+
+.metric span{
+  display:block;
+  margin-top:4px;
+  font-size:.92rem;
+  color:var(--text-muted);
+}
+
+.hero-side{
+  padding:28px;
+  display:grid;
+  gap:18px;
+}
+
+.hero-stack{
+  display:grid;
+  gap:12px;
+}
+
+.stack-chip,
+.tag,
+.meta-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:9px 12px;
+  border-radius:999px;
+  background:var(--bg-soft);
+  border:1px solid var(--line);
+  color:var(--text-soft);
+  font-size:.9rem;
+}
+
+.section{
+  width:var(--container);
+  margin:0 auto;
+  padding:24px 0;
+}
+
+.section-heading{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:20px;
+}
+
+.section-heading h2{
+  font-size:clamp(1.8rem, 3vw, 2.8rem);
+}
+
+.section-heading p{
+  margin:0;
+  max-width:62ch;
+  color:var(--text-muted);
+}
+
+.feature-grid,
+.services-grid,
+.resource-grid,
+.testimonial-grid,
+.project-grid,
+.page-grid,
+.footer-grid{
+  display:grid;
+  gap:18px;
+}
+
+.feature-grid{
+  grid-template-columns:repeat(3, minmax(0,1fr));
+}
+
+.feature-card,
+.section-card,
+.contact-card{
+  padding:24px;
+}
+
+.feature-card h3,
+.section-card h3,
+.sidebar-card h3,
+.contact-card h3{
+  margin:0 0 10px;
+  font-size:1.14rem;
+}
+
+.feature-card p,
+.section-card p,
+.sidebar-card p,
+.contact-card p{
+  margin:0;
+  color:var(--text-muted);
+}
+
+.homepage-content{
+  width:var(--container);
+  margin:0 auto;
+  padding:8px 0 24px;
+  display:grid;
+  grid-template-columns:minmax(0,1.55fr) minmax(280px,.78fr);
+  gap:24px;
+}
+
+.post-stream{
+  display:grid;
+  gap:18px;
+}
+
+.post-card{
+  overflow:hidden;
+}
+
+.post-card-inner{
+  padding:24px;
+}
+
+.post-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:14px;
+  color:var(--text-muted);
+  font-size:.92rem;
+}
+
+.post-title{
+  font-size:clamp(1.45rem, 2.3vw, 2.1rem);
+  margin:0 0 12px;
+}
+
+.post-excerpt{
+  color:var(--text-soft);
+  margin:0 0 18px;
+}
+
+.post-footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.label-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.label-list a,
+.chip-link{
+  display:inline-flex;
+  align-items:center;
+  padding:8px 12px;
+  border-radius:999px;
+  background:var(--bg-soft);
+  border:1px solid var(--line);
+  color:var(--text-soft);
+  transition:transform .25s ease, border-color .25s ease;
+}
+
+.label-list a:hover,
+.chip-link:hover{
+  transform:translateY(-1px);
+  border-color:var(--line-strong);
+}
+
+.sidebar{
+  display:grid;
+  gap:18px;
+  align-self:start;
+  position:sticky;
+  top:calc(var(--header-height) + 16px);
+}
+
+.sidebar-card{
+  padding:22px;
+}
+
+.sidebar-list{
+  list-style:none;
+  margin:14px 0 0;
+  padding:0;
+  display:grid;
+  gap:12px;
+}
+
+.sidebar-list li a{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  color:var(--text-soft);
+}
+
+.post-layout{
+  width:var(--container);
+  margin:0 auto;
+  padding:40px 0 32px;
+  display:grid;
+  grid-template-columns:minmax(0,1.65fr) minmax(250px,.75fr);
+  gap:24px;
+}
+
+.post-shell{
+  padding:32px;
+}
+
+.page-hero{
+  width:var(--container);
+  margin:0 auto;
+  padding:40px 0 16px;
+}
+
+.page-hero-card{
+  padding:32px;
+  background:linear-gradient(130deg, rgba(94,234,212,.08), rgba(125,211,252,.06));
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-soft);
+}
+
+.page-hero h1{
+  font-size:clamp(2.1rem, 4vw, 4rem);
+  margin:14px 0 12px;
+}
+
+.page-hero p{
+  margin:0;
+  color:var(--text-soft);
+  max-width:70ch;
+}
+
+.page-grid{
+  grid-template-columns:repeat(2, minmax(0,1fr));
+}
+
+.project-grid{
+  grid-template-columns:repeat(3, minmax(0,1fr));
+}
+
+.services-grid{
+  grid-template-columns:repeat(3, minmax(0,1fr));
+}
+
+.resource-grid{
+  grid-template-columns:repeat(3, minmax(0,1fr));
+}
+
+.testimonial-grid{
+  grid-template-columns:repeat(3, minmax(0,1fr));
+}
+
+.timeline{
+  display:grid;
+  gap:16px;
+}
+
+.timeline-item{
+  padding:20px;
+  border-radius:18px;
+  background:var(--bg-soft);
+  border:1px solid var(--line);
+}
+
+.timeline-item strong{
+  display:block;
+  margin-bottom:6px;
+}
+
+.newsletter{
+  overflow:hidden;
+}
+
+.newsletter-card{
+  display:grid;
+  grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);
+  gap:22px;
+  align-items:center;
+}
+
+.newsletter-form{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.newsletter-form input{
+  flex:1 1 220px;
+  min-height:54px;
+  border-radius:16px;
+  border:1px solid var(--line);
+  padding:0 16px;
+  background:var(--bg-soft);
+  color:var(--text);
+}
+
+.newsletter-note{
+  color:var(--text-muted);
+  font-size:.92rem;
+}
+
+.article-content,
+.comment-wrapper{
+  margin-top:28px;
+}
+
+.article-content h2,
+.article-content h3,
+.article-content h4{
+  margin:32px 0 14px;
+  line-height:1.18;
+}
+
+.article-content p,
+.article-content li,
+.article-content blockquote{
+  color:var(--text-soft);
+}
+
+.article-content a{
+  color:var(--accent-2);
+}
+
+.article-content img{
+  margin:28px auto;
+  border-radius:22px;
+  box-shadow:var(--shadow-soft);
+}
+
+.article-content pre,
+.article-content code,
+.code-theme{
+  font-family:var(--font-code);
+}
+
+.article-content pre{
+  position:relative;
+  margin:24px 0;
+  padding:20px 18px;
+  background:#07111f;
+  color:#dbeafe;
+  border-radius:18px;
+  overflow:auto;
+  border:1px solid rgba(125,211,252,.14);
+}
+
+html.light-mode .article-content pre{
+  background:#e8f0ff;
+  color:#0f172a;
+}
+
+.article-content :not(pre) > code{
+  padding:3px 8px;
+  border-radius:8px;
+  background:var(--bg-soft);
+  color:var(--accent-2);
+}
+
+.toc{
+  padding:20px;
+  border-radius:18px;
+  background:var(--bg-soft);
+  border:1px solid var(--line);
+}
+
+.toc strong{
+  display:block;
+  margin-bottom:12px;
+}
+
+.toc ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  gap:10px;
+}
+
+.toc a{
+  color:var(--text-soft);
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:18px;
+}
+
+.contact-card ul{
+  list-style:none;
+  margin:14px 0 0;
+  padding:0;
+  display:grid;
+  gap:10px;
+}
+
+.footer{
+  width:var(--container);
+  margin:24px auto 40px;
+  padding:28px;
+  border-radius:28px;
+  background:var(--surface);
+  border:1px solid var(--line);
+  box-shadow:var(--shadow-soft);
+}
+
+.footer-grid{
+  grid-template-columns:1.2fr .8fr .8fr;
+}
+
+.footer p,
+.footer a,
+.footer li{
+  color:var(--text-muted);
+}
+
+.footer ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  gap:10px;
+}
+
+.footer-bottom{
+  margin-top:24px;
+  padding-top:18px;
+  border-top:1px solid var(--line);
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+  color:var(--text-muted);
+}
+
+.hidden{
+  display:none!important;
+}
+
+@media (max-width: 1100px){
+  .hero,
+  .homepage-content,
+  .post-layout,
+  .newsletter-card,
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  .project-grid,
+  .services-grid,
+  .resource-grid,
+  .testimonial-grid,
+  .feature-grid,
+  .page-grid,
+  .contact-grid{
+    grid-template-columns:repeat(2, minmax(0,1fr));
+  }
+
+  .sidebar{
+    position:static;
+  }
+}
+
+@media (max-width: 760px){
+  :root{
+    --container:min(100% - 20px, 1180px);
+    --header-height:auto;
+  }
+
+  .nav-wrap{
+    padding:14px 0;
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .nav-actions,
+  .nav-links,
+  .hero-actions,
+  .newsletter-form{
+    width:100%;
+  }
+
+  .nav-links{
+    overflow:auto;
+    padding-bottom:2px;
+    flex-wrap:nowrap;
+  }
+
+  .nav-link{
+    white-space:nowrap;
+  }
+
+  .hero-panel,
+  .hero-side,
+  .post-card-inner,
+  .post-shell,
+  .feature-card,
+  .section-card,
+  .sidebar-card,
+  .contact-card,
+  .page-hero-card,
+  .footer{
+    padding:20px;
+  }
+
+  .metric-grid,
+  .project-grid,
+  .services-grid,
+  .resource-grid,
+  .testimonial-grid,
+  .feature-grid,
+  .page-grid,
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .section-heading{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .footer-bottom,
+  .post-footer{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+}
+    ]]></b:skin>
+  </head>
+  <body>
+    <a class='skip-link' href='#main-content'>Skip to content</a>
+    <div class='page-shell'>
+      <header class='site-header' role='banner'>
+        <div class='nav-wrap'>
+          <a class='brand' expr:href='data:blog.homepageUrl'>
+            <span class='brand-mark'>C/A</span>
+            <span class='brand-copy'>
+              <strong>CodewithAlbin</strong>
+              <span>Albin Antony John | Full Stack .NET Engineer</span>
+            </span>
+          </a>
+          <div class='nav-actions'>
+            <nav aria-label='Primary navigation' class='nav-links'>
+              <a class='nav-link' expr:href='data:blog.homepageUrl'>Home</a>
+              <a class='nav-link' href='/p/blog.html'>Blog</a>
+              <a class='nav-link' href='/p/about-me.html'>About</a>
+              <a class='nav-link' href='/p/projects.html'>Projects</a>
+              <a class='nav-link' href='/p/services.html'>Services</a>
+              <a class='nav-link' href='/p/resources.html'>Resources</a>
+              <a class='nav-link' href='/p/testimonials.html'>Testimonials</a>
+              <a class='nav-link' href='/p/contact.html'>Contact</a>
+            </nav>
+            <button aria-expanded='false' aria-label='Open search' class='search-toggle' id='searchToggle' type='button'>Search</button>
+            <button aria-label='Toggle theme' class='theme-toggle' id='themeToggle' type='button'>Light</button>
+          </div>
+        </div>
+        <div aria-hidden='true' class='search-panel' id='searchPanel'>
+          <div class='search-card'>
+            <form action='/search' method='get' role='search'>
+              <input aria-label='Search posts' name='q' placeholder='Search articles, architectures, cloud notes...' type='text'/>
+              <input name='max-results' type='hidden' value='12'/>
+              <button type='submit'>Search posts</button>
+            </form>
+          </div>
+        </div>
+      </header>
+      <b:if cond='data:view.isHomepage'>
+        <section class='hero' id='top'>
+          <div class='hero-panel'>
+            <span class='eyebrow'>Engineering Portfolio Blog</span>
+            <h1>Scalable .NET systems, practical architecture, and production lessons.</h1>
+            <p>Albin Antony John writes for recruiters, hiring managers, and engineering teams who care about maintainable systems, delivery quality, and real-world backend architecture beyond beginner tutorials.</p>
+            <div class='hero-actions'>
+              <a class='button button-primary' href='#featured-posts'>Explore articles</a>
+              <a class='button button-secondary' href='/p/projects.html'>View portfolio</a>
+              <a class='button button-secondary' href='/p/resume.html'>Download resume</a>
+            </div>
+            <div class='metric-grid'>
+              <div class='metric'>
+                <strong>.NET + APIs</strong>
+                <span>ASP.NET Core, distributed systems, secure backend design</span>
+              </div>
+              <div class='metric'>
+                <strong>Production-first</strong>
+                <span>Case studies, architecture tradeoffs, scaling insights</span>
+              </div>
+              <div class='metric'>
+                <strong>Hiring-ready</strong>
+                <span>Premium personal brand for recruiters and product teams</span>
+              </div>
+            </div>
+          </div>
+          <aside class='hero-side' aria-label='Quick overview'>
+            <div>
+              <span class='eyebrow'>Core Categories</span>
+              <div class='hero-stack' style='margin-top:14px;'>
+                <span class='stack-chip'>ASP.NET Core</span>
+                <span class='stack-chip'>Web APIs</span>
+                <span class='stack-chip'>Microservices</span>
+                <span class='stack-chip'>System Design</span>
+                <span class='stack-chip'>Azure / AWS</span>
+                <span class='stack-chip'>DevOps and Delivery</span>
+              </div>
+            </div>
+            <div class='section-card'>
+              <h3>Content Strategy</h3>
+              <p>Deep dives, case studies, project builds, code snippets, and decision-focused engineering writeups tailored for strong hiring signals.</p>
+            </div>
+            <div class='section-card'>
+              <h3>Featured Focus</h3>
+              <p>Secure systems, real-time collaboration, predictive workflows, and domain experience across finance, education, and healthcare.</p>
+            </div>
+          </aside>
+        </section>
+
+        <section class='section' id='featured-posts'>
+          <div class='section-heading'>
+            <div>
+              <span class='eyebrow'>Featured Posts</span>
+              <h2>Production engineering insights that read like shipped experience.</h2>
+            </div>
+            <p>Each card is designed to frame technical depth, business impact, and architectural clarity so your blog works as both a publication and a portfolio signal.</p>
+          </div>
+          <div class='feature-grid'>
+            <article class='feature-card'>
+              <h3>Case Study: Scaling ASP.NET Core APIs for Multi-tenant Load</h3>
+              <p>Patterns for tenant isolation, caching, request shaping, observability, and performance optimization under real production constraints.</p>
+            </article>
+            <article class='feature-card'>
+              <h3>System Design: Event-driven Microservices Without Operational Chaos</h3>
+              <p>A pragmatic blueprint for retries, idempotency, schema evolution, and ownership boundaries in distributed .NET ecosystems.</p>
+            </article>
+            <article class='feature-card'>
+              <h3>Cloud Delivery: From Local Build to Reliable Azure Release Pipelines</h3>
+              <p>Deployment discipline, secrets handling, environment strategy, and quality gates for production-facing delivery systems.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class='homepage-content'>
+          <main class='post-stream' id='main-content'>
+            <div class='section-heading'>
+              <div>
+                <span class='eyebrow'>Latest Articles</span>
+                <h2>Recent posts and long-form technical writing.</h2>
+              </div>
+              <p>Optimized for Blogger post feeds with categories, labels, series-style metadata, and recruiter-friendly summaries.</p>
+            </div>
+            <b:section class='main-section' id='main' maxwidgets='1' showaddelement='no'>
+              <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2' visible='true'>
+                <b:includable id='main'>
+                  <b:loop values='data:posts' var='post'>
+                    <article class='post-card' expr:data-url='data:post.url' itemscope='itemscope' itemtype='https://schema.org/BlogPosting'>
+                      <div class='post-card-inner'>
+                        <div class='post-meta'>
+                          <span class='meta-pill' itemprop='datePublished'><data:post.dateHeader/></span>
+                          <b:if cond='data:post.author'>
+                            <span class='meta-pill'><data:post.author/></span>
+                          </b:if>
+                          <span class='meta-pill'>Tutorial / Deep Dive / Case Study</span>
+                        </div>
+                        <h3 class='post-title' itemprop='headline'>
+                          <a expr:href='data:post.url' itemprop='url'><data:post.title/></a>
+                        </h3>
+                        <p class='post-excerpt' itemprop='description'>
+                          <b:if cond='data:post.snippet'>
+                            <data:post.snippet/>
+                          <b:else/>
+                            Building scalable .NET systems and sharing real-world engineering insights for production teams.
+                          </b:if>
+                        </p>
+                        <div class='post-footer'>
+                          <div class='label-list'>
+                            <b:loop values='data:post.labels' var='label'>
+                              <a expr:href='data:label.url' rel='tag'><data:label.name/></a>
+                            </b:loop>
+                          </div>
+                          <a class='button button-secondary' expr:href='data:post.url'>Read article</a>
+                        </div>
+                      </div>
+                    </article>
+                  </b:loop>
+                  <b:if cond='data:posts.empty'>
+                    <article class='post-card'>
+                      <div class='post-card-inner'>
+                        <h3 class='post-title'>Start publishing your engineering story</h3>
+                        <p class='post-excerpt'>Create your first Blogger post and this homepage stream will automatically populate with your latest articles, labels, and metadata.</p>
+                      </div>
+                    </article>
+                  </b:if>
+                </b:includable>
+              </b:widget>
+            </b:section>
+          </main>
+
+          <aside class='sidebar' aria-label='Sidebar'>
+            <div class='sidebar-card'>
+              <h3>Popular Categories</h3>
+              <div class='label-list' style='margin-top:14px;'>
+                <a href='/search/label/ASP.NET%20Core'>ASP.NET Core</a>
+                <a href='/search/label/Web%20APIs'>Web APIs</a>
+                <a href='/search/label/Microservices'>Microservices</a>
+                <a href='/search/label/System%20Design'>System Design</a>
+                <a href='/search/label/Cloud'>Cloud</a>
+                <a href='/search/label/DevOps'>DevOps</a>
+                <a href='/search/label/Interview%20Prep'>Interview Prep</a>
+                <a href='/search/label/Career%20%26%20Freelancing'>Career and Freelancing</a>
+              </div>
+            </div>
+            <div class='sidebar-card'>
+              <h3>Series Support</h3>
+              <p>Use labels like <code>Series:Microservices</code> or <code>Series:SystemDesign</code> to create grouped content collections inside Blogger search pages.</p>
+            </div>
+            <div class='sidebar-card'>
+              <h3>Recent Focus Areas</h3>
+              <ul class='sidebar-list'>
+                <li><a href='/search/label/Case%20Study'><span>Real-world architecture case studies</span><span>01</span></a></li>
+                <li><a href='/search/label/Project%20Builds'><span>Project builds with impact framing</span><span>02</span></a></li>
+                <li><a href='/search/label/Code%20Snippets'><span>Reusable backend patterns and snippets</span><span>03</span></a></li>
+              </ul>
+            </div>
+            <div class='sidebar-card newsletter'>
+              <h3>Newsletter</h3>
+              <p>UI-ready signup block for future integration with your preferred email platform.</p>
+              <form class='newsletter-form' onsubmit='return false;' style='margin-top:14px;'>
+                <input aria-label='Email address' placeholder='Enter your email' type='email'/>
+                <button type='submit'>Subscribe</button>
+              </form>
+            </div>
+          </aside>
+        </section>
+
+        <section class='section'>
+          <div class='section-heading'>
+            <div>
+              <span class='eyebrow'>Portfolio Highlights</span>
+              <h2>Selected projects that show engineering depth and product impact.</h2>
+            </div>
+            <p>These cards are recruiter-facing and ready to align with your case-study posts, GitHub repos, and resume narrative.</p>
+          </div>
+          <div class='project-grid'>
+            <article class='section-card'>
+              <h3>Secure Password Manager App</h3>
+              <p>Encrypted credential storage platform focused on secure access, robust backend APIs, and privacy-first engineering.</p>
+              <div class='label-list' style='margin-top:14px;'>
+                <span class='tag'>ASP.NET Core</span>
+                <span class='tag'>Security</span>
+                <span class='tag'>SQL</span>
+              </div>
+              <p style='margin-top:14px;'>Impact: Demonstrates secure system design, authentication flows, and data protection in production-style architecture.</p>
+              <p style='margin-top:14px;'><a class='chip-link' href='#'>GitHub link</a></p>
+            </article>
+            <article class='section-card'>
+              <h3>Teams-like Chat Application</h3>
+              <p>Real-time collaboration platform covering messaging, presence, notifications, and scalable communication architecture.</p>
+              <div class='label-list' style='margin-top:14px;'>
+                <span class='tag'>SignalR</span>
+                <span class='tag'>.NET</span>
+                <span class='tag'>Realtime</span>
+              </div>
+              <p style='margin-top:14px;'>Impact: Highlights low-latency messaging, concurrent user handling, and distributed system thinking.</p>
+              <p style='margin-top:14px;'><a class='chip-link' href='#'>GitHub link</a></p>
+            </article>
+            <article class='section-card'>
+              <h3>Task Risk Prediction System</h3>
+              <p>Predictive workflow solution designed to identify delivery risks early and support smarter execution planning.</p>
+              <div class='label-list' style='margin-top:14px;'>
+                <span class='tag'>ML Integration</span>
+                <span class='tag'>Analytics</span>
+                <span class='tag'>API Design</span>
+              </div>
+              <p style='margin-top:14px;'>Impact: Positions you at the intersection of backend engineering, forecasting, and product-oriented problem solving.</p>
+              <p style='margin-top:14px;'><a class='chip-link' href='#'>GitHub link</a></p>
+            </article>
+          </div>
+        </section>
+
+        <section class='section'>
+          <div class='section-heading'>
+            <div>
+              <span class='eyebrow'>Domain Experience</span>
+              <h2>Engineering context across business-critical industries.</h2>
+            </div>
+            <p>Use this area to reinforce credibility with product companies that value domain understanding alongside technical execution.</p>
+          </div>
+          <div class='feature-grid'>
+            <article class='feature-card'>
+              <h3>Finance</h3>
+              <p>Secure transactions, data integrity, reliability, compliance-aware thinking, and performance under sensitive operational requirements.</p>
+            </article>
+            <article class='feature-card'>
+              <h3>Education</h3>
+              <p>Scalable learning platforms, content delivery workflows, user-friendly experiences, and maintainable backend services.</p>
+            </article>
+            <article class='feature-card'>
+              <h3>Healthcare</h3>
+              <p>Systems where trust, availability, privacy, and carefully designed integrations matter as much as feature velocity.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class='section'>
+          <div class='section-card newsletter-card'>
+            <div>
+              <span class='eyebrow'>Newsletter Section</span>
+              <h2 style='margin:14px 0 12px;'>Stay close to practical backend architecture and delivery insights.</h2>
+              <p style='margin:0;color:var(--text-soft);'>Built as a UI-only block so you can later connect ConvertKit, Mailchimp, or any lightweight form workflow without reworking the theme.</p>
+            </div>
+            <div>
+              <form class='newsletter-form' onsubmit='return false;'>
+                <input aria-label='Newsletter email' placeholder='you@example.com' type='email'/>
+                <button type='submit'>Join newsletter</button>
+              </form>
+              <p class='newsletter-note'>No backend dependency included. Replace the form action later when you pick an email provider.</p>
+            </div>
+          </div>
+        </section>
+      </b:if>
+
+      <b:if cond='data:view.isSingleItem'>
+        <div class='post-layout'>
+          <main class='post-shell card' id='main-content'>
+            <b:section class='post-section' id='post-body' maxwidgets='1' showaddelement='no'>
+              <b:widget id='Blog2' locked='true' title='Post Body' type='Blog' version='2' visible='true'>
+                <b:includable id='main'>
+                  <b:loop values='data:posts' var='post'>
+                    <article expr:data-post-id='data:post.id' itemscope='itemscope' itemtype='https://schema.org/BlogPosting'>
+                      <div class='post-meta'>
+                        <span class='meta-pill'><data:post.dateHeader/></span>
+                        <b:if cond='data:post.author'><span class='meta-pill'><data:post.author/></span></b:if>
+                        <span class='meta-pill'>CodewithAlbin</span>
+                      </div>
+                      <h1 class='post-title' itemprop='headline'><data:post.title/></h1>
+                      <p class='post-excerpt'>Deep technical writing on scalable .NET systems, delivery engineering, and architecture tradeoffs.</p>
+                      <div class='label-list'>
+                        <b:loop values='data:post.labels' var='label'>
+                          <a expr:href='data:label.url' rel='tag'><data:label.name/></a>
+                        </b:loop>
+                      </div>
+                      <div class='article-content post-body entry-content' id='articleContent' itemprop='articleBody'>
+                        <data:post.body/>
+                      </div>
+                      <div class='comment-wrapper'>
+                        <b:if cond='data:post.allowComments'>
+                          <b:include data='post' name='threaded_comments'/>
+                        </b:if>
+                      </div>
+                      <script type='application/ld+json'>
+                        {
+                          "@context":"https://schema.org",
+                          "@type":"BlogPosting",
+                          "headline":"<data:post.title.jsonEscaped/>",
+                          "description":"<data:post.snippet.jsonEscaped/>",
+                          "datePublished":"<data:post.timestampISO8601/>",
+                          "dateModified":"<data:post.lastUpdatedISO8601/>",
+                          "mainEntityOfPage":"<data:post.url.jsonEscaped/>",
+                          "author":{"@type":"Person","name":"Albin Antony John"},
+                          "publisher":{"@type":"Organization","name":"CodewithAlbin"}
+                        }
+                      </script>
+                    </article>
+                  </b:loop>
+                </b:includable>
+              </b:widget>
+            </b:section>
+          </main>
+          <aside class='sidebar' aria-label='Article tools'>
+            <div class='sidebar-card'>
+              <div class='toc' id='tocContainer'>
+                <strong>Table of Contents</strong>
+                <ul id='tocList'>
+                  <li><span class='meta-pill'>Add headings in posts to generate TOC automatically.</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class='sidebar-card'>
+              <h3>Post Types</h3>
+              <div class='label-list' style='margin-top:14px;'>
+                <a href='/search/label/Tutorials'>Tutorials</a>
+                <a href='/search/label/Deep%20Dives'>Deep Dives</a>
+                <a href='/search/label/Case%20Studies'>Case Studies</a>
+                <a href='/search/label/Project%20Builds'>Project Builds</a>
+                <a href='/search/label/Code%20Snippets'>Code Snippets</a>
+              </div>
+            </div>
+            <div class='sidebar-card'>
+              <h3>More Topics</h3>
+              <div class='label-list' style='margin-top:14px;'>
+                <a href='/search/label/Cloud'>Cloud</a>
+                <a href='/search/label/Frontend'>Frontend</a>
+                <a href='/search/label/DevOps'>DevOps</a>
+                <a href='/search/label/Interview%20Prep'>Interview Prep</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </b:if>
+
+      <b:if cond='data:blog.pageType == "static_page" or data:view.isSearch'>
+        <div class='page-hero'>
+          <div class='page-hero-card'>
+            <span class='eyebrow'>
+              <b:if cond='data:view.isSearch'>Filtered Articles<b:else/>Page Experience</b:if>
+            </span>
+            <h1>
+              <b:if cond='data:view.isSearch'>Browse articles by topic and intent<b:else/><data:view.title/></b:if>
+            </h1>
+            <p>
+              <b:if cond='data:view.isSearch'>
+                Search results, labels, and category archives are styled for a premium reading experience with strong content discoverability.
+              <b:else/>
+                The following static page layout is tuned for personal branding, recruiter visibility, and practical developer storytelling inside Blogger.
+              </b:if>
+            </p>
+          </div>
+        </div>
+
+        <b:if cond='data:view.isSearch'>
+          <section class='homepage-content'>
+            <main class='post-stream' id='main-content'>
+              <div class='section-heading'>
+                <div>
+                  <span class='eyebrow'>Search and Filters</span>
+                  <h2>Matching articles</h2>
+                </div>
+                <p>Use labels as filter primitives to simulate topic browsing, series grouping, and post-type navigation across Blogger search pages.</p>
+              </div>
+              <b:section class='search-section' id='search-results' maxwidgets='1' showaddelement='no'>
+                <b:widget id='Blog3' locked='true' title='Search Results' type='Blog' version='2' visible='true'>
+                  <b:includable id='main'>
+                    <b:loop values='data:posts' var='post'>
+                      <article class='post-card'>
+                        <div class='post-card-inner'>
+                          <div class='post-meta'>
+                            <span class='meta-pill'><data:post.dateHeader/></span>
+                            <span class='meta-pill'>Search result</span>
+                          </div>
+                          <h2 class='post-title'><a expr:href='data:post.url'><data:post.title/></a></h2>
+                          <p class='post-excerpt'><data:post.snippet/></p>
+                          <div class='post-footer'>
+                            <div class='label-list'>
+                              <b:loop values='data:post.labels' var='label'>
+                                <a expr:href='data:label.url'><data:label.name/></a>
+                              </b:loop>
+                            </div>
+                            <a class='button button-secondary' expr:href='data:post.url'>Open article</a>
+                          </div>
+                        </div>
+                      </article>
+                    </b:loop>
+                  </b:includable>
+                </b:widget>
+              </b:section>
+            </main>
+            <aside class='sidebar'>
+              <div class='sidebar-card'>
+                <h3>Category Filters</h3>
+                <div class='label-list' style='margin-top:14px;'>
+                  <a href='/search/label/ASP.NET%20Core'>ASP.NET Core</a>
+                  <a href='/search/label/Web%20APIs'>Web APIs</a>
+                  <a href='/search/label/Microservices'>Microservices</a>
+                  <a href='/search/label/System%20Design'>System Design</a>
+                  <a href='/search/label/Cloud'>Cloud</a>
+                  <a href='/search/label/Frontend'>Frontend</a>
+                  <a href='/search/label/DevOps'>DevOps</a>
+                  <a href='/search/label/Interview%20Prep'>Interview Prep</a>
+                  <a href='/search/label/Career%20%26%20Freelancing'>Career and Freelancing</a>
+                </div>
+              </div>
+            </aside>
+          </section>
+        <b:else/>
+          <main class='section' id='main-content'>
+            <b:if cond='data:view.title == "About Me"'>
+              <div class='page-grid'>
+                <section class='section-card'>
+                  <h3>Who I Am</h3>
+                  <p>I&apos;m Albin Antony John, a Full Stack .NET Engineer focused on building scalable backend systems, practical cloud-native architectures, and maintainable delivery pipelines for real product environments.</p>
+                </section>
+                <section class='section-card'>
+                  <h3>Professional Positioning</h3>
+                  <p>This blog is intentionally crafted for recruiters and product-based companies looking for engineers who can translate technical decisions into stable software outcomes.</p>
+                </section>
+              </div>
+              <section class='section' style='padding-left:0;padding-right:0;'>
+                <div class='timeline'>
+                  <div class='timeline-item'>
+                    <strong>Engineering Philosophy</strong>
+                    <span>Prefer clarity over cleverness, reliability over hype, and production learning over shallow tutorial content.</span>
+                  </div>
+                  <div class='timeline-item'>
+                    <strong>Core Strengths</strong>
+                    <span>ASP.NET Core, API architecture, system design, security, performance tuning, cloud delivery, and practical full-stack implementation.</span>
+                  </div>
+                  <div class='timeline-item'>
+                    <strong>Hiring Signal</strong>
+                    <span>The goal is simple: show how I think, build, scale, and document software that matters.</span>
+                  </div>
+                </div>
+              </section>
+            </b:if>
+
+            <b:if cond='data:view.title == "Projects"'>
+              <div class='project-grid'>
+                <article class='section-card'>
+                  <h3>Secure Password Manager App</h3>
+                  <p>Security-centered credential management solution with encrypted storage and dependable access workflows.</p>
+                  <p style='margin-top:14px;'>Tech stack: ASP.NET Core, Entity Framework, SQL Server, Identity, encryption utilities.</p>
+                  <p style='margin-top:14px;'>Key impact: Demonstrates secure architecture, clean backend layering, and privacy-aware product thinking.</p>
+                  <p style='margin-top:14px;'><a class='chip-link' href='#'>GitHub placeholder</a></p>
+                </article>
+                <article class='section-card'>
+                  <h3>Teams-like Chat Application</h3>
+                  <p>Real-time communication platform with messaging, presence, group collaboration, and scalable interaction flows.</p>
+                  <p style='margin-top:14px;'>Tech stack: ASP.NET Core, SignalR, Web APIs, authentication, event-driven updates.</p>
+                  <p style='margin-top:14px;'>Key impact: Shows competence in low-latency systems, state coordination, and collaboration-focused UX.</p>
+                  <p style='margin-top:14px;'><a class='chip-link' href='#'>GitHub placeholder</a></p>
+                </article>
+                <article class='section-card'>
+                  <h3>Task Risk Prediction System</h3>
+                  <p>Prediction-oriented delivery support system designed to flag project risk and improve execution visibility.</p>
+                  <p style='margin-top:14px;'>Tech stack: .NET backend services, analytics pipeline, predictive model integration, dashboard APIs.</p>
+                  <p style='margin-top:14px;'>Key impact: Connects backend engineering with business value, decision support, and measurable delivery outcomes.</p>
+                  <p style='margin-top:14px;'><a class='chip-link' href='#'>GitHub placeholder</a></p>
+                </article>
+              </div>
+              <section class='section' style='padding-left:0;padding-right:0;'>
+                <div class='feature-grid'>
+                  <article class='feature-card'><h3>Finance</h3><p>Secure systems, reliable transactions, and data sensitivity.</p></article>
+                  <article class='feature-card'><h3>Education</h3><p>Scalable learning products and maintainable delivery workflows.</p></article>
+                  <article class='feature-card'><h3>Healthcare</h3><p>Privacy-aware systems where trust and stability are critical.</p></article>
+                </div>
+              </section>
+            </b:if>
+
+            <b:if cond='data:view.title == "Resume"'>
+              <div class='page-grid'>
+                <section class='section-card'>
+                  <h3>Resume Snapshot</h3>
+                  <p>Full Stack .NET Engineer with a portfolio centered on scalable APIs, system design, practical architecture, and professional delivery discipline.</p>
+                </section>
+                <section class='section-card'>
+                  <h3>Resume Download</h3>
+                  <p>Add your hosted PDF link below so recruiters can download it directly from Blogger.</p>
+                  <p style='margin-top:16px;'><a class='button button-primary' href='#'>Download Resume PDF</a></p>
+                </section>
+              </div>
+            </b:if>
+
+            <b:if cond='data:view.title == "Services"'>
+              <div class='services-grid'>
+                <article class='section-card'>
+                  <h3>Backend Architecture Consulting</h3>
+                  <p>API design, modular monoliths, microservices tradeoffs, and maintainable backend foundations for product teams.</p>
+                </article>
+                <article class='section-card'>
+                  <h3>Performance and Scalability Reviews</h3>
+                  <p>Production-focused guidance for throughput, caching, bottleneck analysis, and reliability improvements.</p>
+                </article>
+                <article class='section-card'>
+                  <h3>Cloud and Delivery Setup</h3>
+                  <p>Support for deployment pipelines, environment structure, release confidence, and practical DevOps adoption.</p>
+                </article>
+              </div>
+            </b:if>
+
+            <b:if cond='data:view.title == "Resources"'>
+              <div class='resource-grid'>
+                <article class='section-card'>
+                  <h3>Architecture Notes</h3>
+                  <p>Curated writeups on system design, service boundaries, and backend reliability patterns.</p>
+                </article>
+                <article class='section-card'>
+                  <h3>Developer Toolkit</h3>
+                  <p>Recommended tools, code quality utilities, debugging workflows, and delivery helpers for .NET teams.</p>
+                </article>
+                <article class='section-card'>
+                  <h3>Interview and Career Prep</h3>
+                  <p>Structured content around system design interviews, backend fundamentals, and career progression.</p>
+                </article>
+              </div>
+            </b:if>
+
+            <b:if cond='data:view.title == "Testimonials"'>
+              <div class='testimonial-grid'>
+                <article class='section-card'>
+                  <h3>Engineering Feedback</h3>
+                  <p>&quot;Albin brings strong ownership to backend architecture and thinks carefully about maintainability before complexity.&quot;</p>
+                </article>
+                <article class='section-card'>
+                  <h3>Delivery Feedback</h3>
+                  <p>&quot;Reliable, practical, and thoughtful in turning technical problems into stable product outcomes.&quot;</p>
+                </article>
+                <article class='section-card'>
+                  <h3>Collaboration Feedback</h3>
+                  <p>&quot;Balances execution speed with clean engineering decisions and communicates tradeoffs clearly.&quot;</p>
+                </article>
+              </div>
+            </b:if>
+
+            <b:if cond='data:view.title == "Contact"'>
+              <div class='contact-grid'>
+                <section class='contact-card'>
+                  <h3>Work With Me</h3>
+                  <p>Available for engineering opportunities, consulting conversations, and product-focused backend roles.</p>
+                  <ul>
+                    <li>Email: your-email@example.com</li>
+                    <li>LinkedIn: linkedin.com/in/your-profile</li>
+                    <li>GitHub: github.com/your-profile</li>
+                  </ul>
+                </section>
+                <section class='contact-card'>
+                  <h3>Contact Form Placeholder</h3>
+                  <p>Blogger does not provide a rich built-in form workflow for static pages, so this card is intentionally UI-ready for a future embedded form.</p>
+                </section>
+              </div>
+            </b:if>
+
+            <b:if cond='data:view.title == "Blog"'>
+              <section class='section' style='padding-left:0;padding-right:0;'>
+                <div class='sidebar-card'>
+                  <h3>Use This Page As Your Blog Landing Page</h3>
+                  <p>Create a Blogger page named Blog and link it in navigation. Then use label pages and search to help visitors filter by topic, post type, or series.</p>
+                </div>
+              </section>
+            </b:if>
+
+            <b:if cond='data:view.title != "About Me" and data:view.title != "Projects" and data:view.title != "Resume" and data:view.title != "Services" and data:view.title != "Resources" and data:view.title != "Testimonials" and data:view.title != "Contact" and data:view.title != "Blog"'>
+              <section class='section-card'>
+                <h3>Custom Static Page</h3>
+                <p>This theme provides a polished static page shell. Add any custom content in the Blogger page editor and it will inherit the same typography, spacing, and color system.</p>
+              </section>
+            </b:if>
+          </main>
+        </b:if>
+      </b:if>
+
+      <footer class='footer'>
+        <div class='footer-grid'>
+          <div>
+            <h3 style='margin-top:0;'>CodewithAlbin</h3>
+            <p>Building scalable .NET systems and sharing real-world engineering insights for recruiters, product teams, and developers who value shipped experience.</p>
+          </div>
+          <div>
+            <h3 style='margin-top:0;'>Explore</h3>
+            <ul>
+              <li><a href='/search/label/ASP.NET%20Core'>ASP.NET Core</a></li>
+              <li><a href='/search/label/System%20Design'>System Design</a></li>
+              <li><a href='/search/label/Cloud'>Cloud</a></li>
+              <li><a href='/search/label/DevOps'>DevOps</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 style='margin-top:0;'>Connect</h3>
+            <ul>
+              <li><a href='https://github.com/your-profile'>GitHub</a></li>
+              <li><a href='https://www.linkedin.com/in/your-profile'>LinkedIn</a></li>
+              <li><a href='mailto:your-email@example.com'>Email</a></li>
+              <li><a href='/p/contact.html'>Contact page</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class='footer-bottom'>
+          <span>Copyright <data:blog.title/>. Crafted for a premium developer brand.</span>
+          <span>Fast, semantic, and Blogger-native.</span>
+        </div>
+      </footer>
+    </div>
+
+    <script><![CDATA[
+      (function(){
+        var root = document.documentElement;
+        var storedTheme = '';
+        try { storedTheme = localStorage.getItem('codewithalbin-theme') || ''; } catch (e) {}
+        var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+        if (storedTheme === 'light' || (!storedTheme && prefersLight)) {
+          root.classList.add('light-mode');
+        }
+
+        var themeToggle = document.getElementById('themeToggle');
+        function syncThemeLabel(){
+          if (!themeToggle) { return; }
+          themeToggle.textContent = root.classList.contains('light-mode') ? 'Dark' : 'Light';
+        }
+        syncThemeLabel();
+        if (themeToggle) {
+          themeToggle.addEventListener('click', function(){
+            root.classList.toggle('light-mode');
+            try { localStorage.setItem('codewithalbin-theme', root.classList.contains('light-mode') ? 'light' : 'dark'); } catch (e) {}
+            syncThemeLabel();
+          });
+        }
+
+        var searchToggle = document.getElementById('searchToggle');
+        var searchPanel = document.getElementById('searchPanel');
+        if (searchToggle && searchPanel) {
+          searchToggle.addEventListener('click', function(){
+            var visible = searchPanel.classList.toggle('is-visible');
+            searchToggle.setAttribute('aria-expanded', visible ? 'true' : 'false');
+          });
+        }
+
+        var articleContent = document.getElementById('articleContent');
+        var tocList = document.getElementById('tocList');
+        if (articleContent && tocList) {
+          var headings = articleContent.querySelectorAll('h2, h3');
+          if (headings.length) {
+            tocList.innerHTML = '';
+            for (var i = 0; i < headings.length; i++) {
+              var heading = headings[i];
+              if (!heading.id) {
+                heading.id = 'section-' + (i + 1);
+              }
+              var li = document.createElement('li');
+              var link = document.createElement('a');
+              link.href = '#' + heading.id;
+              link.textContent = heading.textContent;
+              li.appendChild(link);
+              tocList.appendChild(li);
+            }
+          }
+
+          var blocks = articleContent.querySelectorAll('pre');
+          for (var j = 0; j < blocks.length; j++) {
+            var pre = blocks[j];
+            if (pre.querySelector('.copy-button')) { continue; }
+            var button = document.createElement('button');
+            button.className = 'copy-button';
+            button.type = 'button';
+            button.textContent = 'Copy';
+            button.style.position = 'absolute';
+            button.style.top = '12px';
+            button.style.right = '12px';
+            button.addEventListener('click', (function(block, btn){
+              return function(){
+                var text = block.innerText;
+                if (!navigator.clipboard) { return; }
+                navigator.clipboard.writeText(text).then(function(){
+                  var original = btn.textContent;
+                  btn.textContent = 'Copied';
+                  setTimeout(function(){ btn.textContent = original; }, 1600);
+                });
+              };
+            })(pre, button));
+            pre.appendChild(button);
+          }
+        }
+      })();
+    ]]></script>
+  </body>
+</html>
+
